@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TwilioVerifyRazor.Models
+namespace TwilioLookupCaller.Models
 {
     public class PhoneNumberInfo
     {
