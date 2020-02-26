@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using TwilioLookupCaller.Models;
 
 namespace TwilioLookupCaller
 {
@@ -24,6 +25,12 @@ namespace TwilioLookupCaller
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddRazorPages();
+
+            services.Configure<TwilioSettings>(settings =>
+            {
+                settings.AccountSid = Environment.GetEnvironmentVariable("TWILIO_ACCOUNT_SID");
+                settings.AuthToken = Environment.GetEnvironmentVariable("TWILIO_AUTH_TOKEN");
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
