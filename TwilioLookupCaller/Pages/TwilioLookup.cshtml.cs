@@ -26,7 +26,7 @@ namespace TwilioLookupCaller
         }
         public IActionResult OnGet()
         {
-            // For demonstration purposes, preset. You'll want a dropdown on the UI.
+            // For demonstration purposes, preset. Caller Lookup is a US-only service.
             PhoneNumberInfo.CountryCodeSelected = $"US";
             return Page();
 
